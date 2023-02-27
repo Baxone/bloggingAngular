@@ -9,6 +9,9 @@ import { Post } from 'src/app/interfaces/post.interface';
 export class BlogComponent implements OnInit {
   arrPost: Post[] = [];
   id: number = 3;
+  newPost: Post = { id: 0, title: "", body: "", image: "", date: "" }
+  msg: boolean = false;
+  textmsg: string = "";
 
   constructor() {
     this.arrPost = [
@@ -47,5 +50,19 @@ export class BlogComponent implements OnInit {
             </div></article>`
     })
     return section
+  }
+
+  guardar() {
+    if (this.newPost.title !== "" && this.newPost.body !== "" && this.newPost.image !== "" && this.newPost.date !== "") {
+      //tengo datos que guardar
+      this.newPost.id = this.id;
+      this.arrPost.push(this.newPost);
+      this.id++;
+      this.cargarDatos();
+      this.newPost = { id: 0, title: "", body: "", image: "", date: "" }
+    } else {
+      //mensaje de error
+      alert('Los campos no pueden estar vacios')
+    }
   }
 }
