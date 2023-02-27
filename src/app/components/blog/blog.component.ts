@@ -7,35 +7,15 @@ import { Post } from 'src/app/interfaces/post.interface';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
-  arrPost: Post[] = [];
-  id: number = 3;
-  newPost: Post = { id: 0, title: "", body: "", image: "", date: "" }
-  msg: boolean = false;
-  textmsg: string = "";
 
   constructor() {
-    this.arrPost = [
-      {
-        id: 1,
-        title: "En un lugar de la mancha",
-        body: "Noticia 1 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, porro. Hic aperiam nobis at veritatis, quis iusto nostrum necessitatibus delectus, quas similique in optio esse harum odit molestiae perferendis dolorum. Eveniet impedit explicabo cumque reiciendis quae omnis sit maiores, inventore quod obcaecati",
-        image: "https://fastly.picsum.photos/id/0/367/267.jpg?hmac=7vvdjNHaShwe3Ul3DAaQIBBz0RnNLfUcEaCV-94NNLE",
-        date: '2023-02-12'
-      },
-      {
-        id: 2,
-        title: "Solo se que no se nada",
-        body: "Noticia 2 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, porro. Hic aperiam nobis at veritatis, quis iusto nostrum necessitatibus delectus, quas similique in optio esse harum odit molestiae perferendis dolorum. Eveniet impedit explicabo cumque reiciendis quae omnis sit maiores, inventore quod obcaecati veniam architecto!",
-        image: "https://fastly.picsum.photos/id/4/367/267.jpg?hmac=Rqu-I3Sq8iKayz1FUM3EuPZnWCQHYBXAfzPOJKv3iGk",
-        date: '2023-02-24'
-      }
-    ]
   }
 
   ngOnInit(): void {
-    this.cargarDatos()
+
   }
 
+  /*
   cargarDatos(): string {
     let section = ""
     this.arrPost.forEach(post => {
@@ -51,18 +31,6 @@ export class BlogComponent implements OnInit {
     })
     return section
   }
+  */
 
-  guardar() {
-    if (this.newPost.title !== "" && this.newPost.body !== "" && this.newPost.image !== "" && this.newPost.date !== "") {
-      //tengo datos que guardar
-      this.newPost.id = this.id;
-      this.arrPost.push(this.newPost);
-      this.id++;
-      this.cargarDatos();
-      this.newPost = { id: 0, title: "", body: "", image: "", date: "" }
-    } else {
-      //mensaje de error
-      alert('Los campos no pueden estar vacios')
-    }
-  }
 }

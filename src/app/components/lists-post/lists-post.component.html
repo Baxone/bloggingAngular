@@ -1,0 +1,16 @@
+<h2>Lista de posts</h2>
+<hr>
+<section class="row">
+
+  <article class="col-12 col-md-6 col-lg-4" *ngFor="let post of arrPosts">
+    <div class="card">
+      <img [src]="post.image" class="card-img-top" [alt]="post.title">
+      <div class="card-body">
+        <h5 class="card-title">{{post.title}}</h5>
+        <p class="card-text">{{post.body}}</p>
+        <small class="text-muted">{{post.date}}</small>
+      </div>
+    </div>
+  </article>
+
+</section>

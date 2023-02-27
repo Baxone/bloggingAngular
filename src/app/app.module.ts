@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BlogComponent } from './components/blog/blog.component';
+import { FormComponent } from './components/form/form.component';
+import { ListsPostComponent } from './components/lists-post/lists-post.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { BlogComponent } from './components/blog/blog.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    BlogComponent
+    BlogComponent,
+    FormComponent,
+    ListsPostComponent
   ],
   imports: [
     BrowserModule,
